@@ -1,0 +1,31 @@
+name: Run Python Script
+
+on:
+  schedule:
+    # Schedule the job to run every day at midnight
+    - cron: '0 * * * *'
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Checkout the repository
+    - name: Checkout repository content
+      uses: actions/checkout@v2
+
+    # Set up Python 3.9
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'  # Use any Python version you need
+
+    # Install dependencies if you have any in requirements.txt
+    - name: Install dependencies
+      run: |
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+    # Run the Python script
+    - name: Run Python script
+      run: python main.py
+      
