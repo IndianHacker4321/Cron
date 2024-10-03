@@ -3,7 +3,7 @@ name: Run Python Script
 on:
   schedule:
     # Schedule the job to run every day at midnight
-    - cron: '* * * * *'
+    - cron: '0 * * * *'
 
 jobs:
   run-script:
