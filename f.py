@@ -1,7 +1,6 @@
 from bs4 import BeautifulSoup
 from Crypto.Cipher import AES
 import re
-import os
 
 def jschallenge(html, valueonly=False):
     # Step 1: Parse the HTML
@@ -93,6 +92,3 @@ class Cookie:
             print(f"Cookie successfully written: {cookie}")
         except Exception as e:
             print(f"Failed to write cookie to file: {e}")
-
-# Debugging Helper: Check Current Working Directory
-print("Current Working Directory:", os.getcwd())
