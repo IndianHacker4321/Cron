@@ -16,8 +16,9 @@ html = response.text
 if detect(html) or (cookie == "" and detect(html)):
     cookie.set(jschallenge(html))
     print("Cookie Updated")
-else:
     re = requests.get(url,headers=headers)
     html = response.text
+    print(html)
+else:
     print(html)
     
