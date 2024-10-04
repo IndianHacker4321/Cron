@@ -3,7 +3,7 @@ name: Cron trigger
 on:
   schedule:
     # Schedule the job to run every day at midnight
-    - cron: '*/10 * * * *'
+    - cron: '*/30 * * * *'
 
 jobs:
   run-script:
