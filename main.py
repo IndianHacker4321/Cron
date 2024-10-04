@@ -14,10 +14,10 @@ html = response.text
 
 
 if detect(html) or (current_cookie == "" and detect(html)):
-    cookie.set(jschallenge(html))
+    new_cookie = jschallenge(html)
+    cookie.set(new_cookie)  # Save the new cookie
+    headers['cookie'] = new_cookie  # Update headers with the new cookie
     print("Cookie Updated")
-    re = requests.get(url,headers=headers)
-    html = response.text
     print(html)
 else:
     print(html)
